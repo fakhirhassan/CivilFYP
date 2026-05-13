@@ -1,0 +1,61 @@
+{
+  "report": {
+    "model": "GB_seed_ensemble(10)",
+    "feature_set": "engineered_9",
+    "cv_random_test_r2": 0.8698127094712469,
+    "cv_random_test_r2_std": 0.12259467443646424,
+    "overfit_gap": 0.12917205015495503,
+    "features": [
+      "total_binder",
+      "ggbfs_fraction",
+      "total_activator",
+      "naoh_molarity",
+      "activator_binder_ratio",
+      "w_b_ratio",
+      "rca_fraction",
+      "curing_time_hr",
+      "sp"
+    ],
+    "path": "/Users/fakhirhassan/Desktop/CivilFYP/slump_champions/slump_report_champion.pkl"
+  },
+  "app": {
+    "model": "LightGBM",
+    "feature_set": "engineered_9",
+    "cv_group_test_r2": 0.6616289843716918,
+    "cv_group_test_r2_std": 0.22817605821279152,
+    "overfit_gap": 0.3334143474404784,
+    "features": [
+      "total_binder",
+      "ggbfs_fraction",
+      "total_activator",
+      "naoh_molarity",
+      "activator_binder_ratio",
+      "w_b_ratio",
+      "rca_fraction",
+      "curing_time_hr",
+      "sp"
+    ],
+    "path": "/Users/fakhirhassan/Desktop/CivilFYP/slump_champions/slump_app_champion.pkl"
+  },
+  "report_v2": {
+    "model": "GB_seed_ensemble(10)",
+    "feature_set": "engineered_9",
+    "protocol": "LOOCV",
+    "cv_test_r2": 0.9518897583062355,
+    "cv_test_r2_std": 0.0,
+    "train_r2": 0.9986913128163627,
+    "features": [
+      "total_binder",
+      "ggbfs_fraction",
+      "total_activator",
+      "naoh_molarity",
+      "activator_binder_ratio",
+      "w_b_ratio",
+      "rca_fraction",
+      "curing_time_hr",
+      "sp"
+    ],
+    "path": "/Users/fakhirhassan/Desktop/CivilFYP/slump_champions/slump_report_champion_v2.pkl",
+    "note": "Selected from Phase 10 CV-protocol shootout for the report/defense."
+  }
+}
