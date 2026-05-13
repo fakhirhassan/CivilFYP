@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# macOS
+.DS_Store
+
+# Virtual envs
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# CatBoost training artefacts (not needed for the deployed app)
+catboost_info/
+
+# Build / phase logs — large, regenerable from notebooks
+slump_full_phase_results.xlsx
+cs_full_phase_results.xlsx
+
+# OS / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+
+# Backup / temp Excel locks
+~$*.xlsx
