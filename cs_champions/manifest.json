@@ -1,0 +1,67 @@
+{
+  "report": {
+    "model": "Stacked (SVR+ET+XGB+HGB)",
+    "feature_set": "engineered_12",
+    "cv_random_test_r2": 0.7030189472874318,
+    "cv_random_test_r2_std": 0.09769981895736926,
+    "overfit_gap": 0.2432718238056022,
+    "features": [
+      "total_binder",
+      "ggbfs_fraction",
+      "total_activator",
+      "na2sio3_naoh_ratio",
+      "naoh_molarity",
+      "activator_binder_ratio",
+      "w_b_ratio",
+      "rca_fraction",
+      "r_sand_fraction",
+      "curing_temp_c",
+      "curing_time_hr",
+      "sp"
+    ],
+    "path": "/Users/fakhirhassan/Desktop/CivilFYP/cs_champions/cs_report_champion.pkl"
+  },
+  "app": {
+    "model": "ExtraTrees",
+    "feature_set": "engineered_9",
+    "cv_group_test_r2": 0.5273940608703354,
+    "cv_group_test_r2_std": 0.10153315646335978,
+    "overfit_gap": 0.4395173328969032,
+    "features": [
+      "total_binder",
+      "ggbfs_fraction",
+      "total_activator",
+      "na2sio3_naoh_ratio",
+      "naoh_molarity",
+      "w_b_ratio",
+      "curing_temp_c",
+      "curing_time_hr",
+      "sp"
+    ],
+    "path": "/Users/fakhirhassan/Desktop/CivilFYP/cs_champions/cs_app_champion.pkl"
+  },
+  "report_v2": {
+    "model": "WideStack(8bases)",
+    "feature_set": "engineered_12",
+    "protocol": "LOOCV",
+    "cv_test_r2": 0.7970576212430787,
+    "cv_test_r2_std": 0.0,
+    "train_r2": 0.9713097976679237,
+    "features": [
+      "total_binder",
+      "ggbfs_fraction",
+      "total_activator",
+      "na2sio3_naoh_ratio",
+      "naoh_molarity",
+      "activator_binder_ratio",
+      "w_b_ratio",
+      "rca_fraction",
+      "r_sand_fraction",
+      "curing_temp_c",
+      "curing_time_hr",
+      "sp"
+    ],
+    "path": "/Users/fakhirhassan/Desktop/CivilFYP/cs_champions/cs_report_champion_v2.pkl",
+    "note": "Selected from Phase 11 push experiments (tighter Optuna / wider stack / ElasticNet meta)."
+  }
+}

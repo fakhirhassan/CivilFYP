@@ -611,30 +611,6 @@ def main():
         metrics_loocv[display_name] = m_loo
         sheet_preds.append((display_name, preds_rand, preds_grp, preds_loo))
 
-    # Patch in LOOCV R^2 for the skipped slow stacks from Phase10_CV_protocols
-    try:
-        p10 = pd.read_excel(PHASE_LOG, sheet_name="Phase10_CV_protocols")
-        loocv_only = p10[p10["protocol"] == "LOOCV"]
-        # Map Phase10 model names to display names in this builder
-        phase10_to_display = {
-            "BoostStack": "BoostStack",
-            "GB_seed_ensemble(10)": "GB_seed_ensemble",
-        }
-        for p10_name, display in phase10_to_display.items():
-            best = loocv_only[loocv_only["model"] == p10_name]
-            if best.empty: continue
-            r2 = float(best.iloc[0]["test_r2"])
-            train_r2 = float(best.iloc[0]["train_r2"])
-            # Skeleton row with only R^2 filled in (other metrics left blank)
-            blank = {(split, met): None
-                     for split in ("train", "val", "test") for met in METRIC_ORDER}
-            blank[("test", "R2")] = r2
-            blank[("train", "R2")] = train_r2
-            metrics_loocv[display] = blank
-        # Legacy Stacked Ensemble doesn't appear in Phase10 — leave its LOOCV row None.
-    except Exception as _e:
-        print(f"  (could not patch LOOCV R^2 from Phase10: {_e})")
-
     print("Writing workbook …")
     wb = Workbook(); wb.remove(wb.active)
     write_dataset_overview(wb, df, X12, y, groups)
